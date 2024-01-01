@@ -1,0 +1,64 @@
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    min-height: 50vh;
+    width: 400px;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial;
+}
+
+.timer-display {
+    border: 2px solid #33036e;
+    color: #33036e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    font-size: 48px;
+    background-color: #fff;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.timer-controls button {
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.timer-controls button:hover {
+    background-color: #0046D5;
+}
+
+.timer-laps {
+    width: 100%;    
+}
+
+.timer-laps ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.timer-laps li {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 16px;
+}
+
+/* Somente as li ípares */
+.timer-laps li:nth-child(odd) {
+    background-color: #ddd;
+}
