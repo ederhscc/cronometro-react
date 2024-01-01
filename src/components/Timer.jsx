@@ -63,7 +63,7 @@ const Timer = () => {
         onStop={() => setTimerOn(false)}
         onLap={addLap}
       />
-      <LapList />
+      <LapList laps={laps} />
     </div>
   );
 };
