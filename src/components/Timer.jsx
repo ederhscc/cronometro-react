@@ -20,10 +20,36 @@ const Timer = () => {
     return `${minutes}:${seconds}:${centiseconds}`;
   };
 
+  const startTimer = (interval) => {
+    return setInterval(() => {
+      setMilliseconds((prevMilliseconds) => prevMilliseconds + 10);
+    }, 10);
+  };
+
+  const stopTimer = (interval) => {
+    clearInterval(interval);
+    return interval;
+  };
+
+  useEffect(() => {
+    let interval = null;
+
+    if (timerOn) {
+      interval = startTimer(interval);
+    } else {
+      interval = stopTimer(interval);
+    }
+
+    return () => stopTimer(interval)
+  }, [timerOn]);
+
   return (
     <div className="timer-container">
       <TimerDisplay timer={formatTime()} />
-      <TimerControls />
+      <TimerControls
+        onStart={() => setTimerOn(true)}
+        onStop={() => setTimerOn(false)}
+      />
       <LapList />
     </div>
   );

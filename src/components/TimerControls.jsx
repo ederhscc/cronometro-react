@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const TimerControls = () => {
+const TimerControls = ({ onStart, onStop }) => {
   return (
-    <div className='timer-controls'>
-        <button>Iniciar</button>
-        <button>Zerar</button>
+    <div className="timer-controls">
+      <button onClick={onStart}>Iniciar</button>
+      <button onClick={onStop}>Zerar</button>
     </div>
-  )
-}
+  );
+};
 
-export default TimerControls
+export default TimerControls;
